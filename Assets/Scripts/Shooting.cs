@@ -8,11 +8,13 @@ public class Shooting : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float baseFiringRate = 0.2f;
     [SerializeField] float projcetileLifetime = 5f;
+
+    [Header("AI")]
     [SerializeField] bool useAI;
     [SerializeField] float fireRateVariance = 0f;
     [SerializeField] float minimumFireRate = 0.1f;
 
-    public bool isFiring;
+    [HideInInspector]public bool isFiring;
 
     Coroutine firingCoroutine;
     void Start()
