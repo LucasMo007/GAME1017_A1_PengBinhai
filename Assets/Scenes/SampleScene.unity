@@ -208,7 +208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1745775080}
+  - {fileID: 1786057675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -336,7 +336,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1696dab672409846aa94fc7c8d09f1b, type: 2}
   - {fileID: 11400000, guid: b87e664c4ab77cc4292154ed3bea40d9, type: 2}
   timeBetweenWaves: 2
-  IsLooping: 0
+  IsLooping: 1
 --- !u!4 &947161300
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1745775079
+--- !u!1 &1786057674
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,37 +360,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1745775080}
-  - component: {fileID: 1745775081}
+  - component: {fileID: 1786057675}
+  - component: {fileID: 1786057676}
   m_Layer: 0
-  m_Name: black
+  m_Name: starfield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1745775080
+--- !u!4 &1786057675
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745775079}
+  m_GameObject: {fileID: 1786057674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.62, z: 0}
-  m_LocalScale: {x: 6.0558, y: 11.657414, z: 6.0558}
+  m_LocalPosition: {x: 0.31429088, y: -0.07065895, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 274811519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1745775081
+--- !u!212 &1786057676
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745775079}
+  m_GameObject: {fileID: 1786057674}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -424,13 +424,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 1fa41e1a4239c3b4bb4bc63df30a3441, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: bcec34b5be3b24d409511e5956222856, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -444,9 +444,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1244985395500168596, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 5401220433771481897, guid: ad1dfa891d35d08408a403f45b6332cd, type: 3}
     - target: {fileID: 4130312941514378025, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130312941514378025, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4480066437352089565, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,13 +496,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6317095555953991942, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 5401220433771481897, guid: ad1dfa891d35d08408a403f45b6332cd, type: 3}
-    - target: {fileID: 6317095555953991942, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
-      propertyPath: projcetileLifetime
-      value: 5
+    - target: {fileID: 8094700847701082332, guid: e8025edeb6f339345b7a437057f118a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

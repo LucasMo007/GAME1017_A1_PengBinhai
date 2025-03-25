@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7213326679477113757}
   - component: {fileID: 5109287238665732314}
   - component: {fileID: 6278387275032491700}
+  - component: {fileID: 1356792617300672322}
   m_Layer: 6
   m_Name: Projectile_Enemy
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5401220433771481897}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -93,9 +94,22 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0009992123, y: 0.0030373335}
-  m_Size: {x: 0.11619854, y: 0.4100927}
+  m_Offset: {x: 0.0047700405, y: 0.0011142492}
+  m_Size: {x: 0.19696903, y: 0.7524055}
   m_Direction: 0
+--- !u!114 &1356792617300672322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401220433771481897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab568336b5739dd44b6ee713e8793f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &6135711985455424905
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7909573937951393090}
   - component: {fileID: 7380189217644122772}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: laserRed07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,9 +135,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6135711985455424905}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.32, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7213326679477113757}

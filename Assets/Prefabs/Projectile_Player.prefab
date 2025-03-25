@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5129874229543347818}
   - component: {fileID: 2904815240567182969}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: laserBlue07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2492182714853313313}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7213326679477113757}
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7213326679477113757}
   - component: {fileID: 5109287238665732314}
   - component: {fileID: 6278387275032491700}
+  - component: {fileID: 4946494545654985897}
   m_Layer: 3
   m_Name: Projectile_Player
   m_TagString: Untagged
@@ -177,6 +178,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0009992123, y: 0.0030373335}
-  m_Size: {x: 0.11619854, y: 0.4100927}
+  m_Offset: {x: 0.0032844543, y: 0.0030373037}
+  m_Size: {x: 0.19330263, y: 0.7185088}
   m_Direction: 0
+--- !u!114 &4946494545654985897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401220433771481897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab568336b5739dd44b6ee713e8793f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
