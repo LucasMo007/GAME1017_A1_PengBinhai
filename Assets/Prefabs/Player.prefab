@@ -126,8 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5401220433771481897, guid: ad1dfa891d35d08408a403f45b6332cd, type: 3}
   projectileSpeed: 10
-  fireRate: 0.2
+  baseFiringRate: 0.2
   projcetileLifetime: 5
+  useAI: 0
+  fireRateVariance: 0
+  minimumFireRate: 0.1
   isFiring: 0
 --- !u!58 &3909892269638143704
 CircleCollider2D:
@@ -176,7 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ce265fd0a0caf4b8ad8662d21919a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   health: 50
+  score: 0
 --- !u!1 &8094700847701082332
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
   projectileSpeed: 10
-  fireRate: 0.5
+  baseFiringRate: 0.2
   projcetileLifetime: 5
+  useAI: 0
+  fireRateVariance: 0
+  minimumFireRate: 0.1
   isFiring: 0
