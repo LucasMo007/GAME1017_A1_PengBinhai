@@ -9,6 +9,10 @@ public class Health : MonoBehaviour
 
     [SerializeField] bool isPlayer;
     [SerializeField] int health = 50;
+    [SerializeField] ParticleSystem hitEffect;
+
+    [SerializeField] bool applyCameraShake;
+    CameraShake cameraShake;
     [SerializeField] int score = 50;
     AudioPlayer audioPlayer;
 
@@ -16,6 +20,7 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindAnyObjectByType<AudioPlayer>();
         scoreKeeper = FindAnyObjectByType<ScoreKeeper>();
     }
@@ -27,8 +32,11 @@ public class Health : MonoBehaviour
 
         {
             TakeDamage(damageDealer.GetDamage());
+            PlayHitEffect();
+            ShakeCamera();
             damageDealer.Hit();
             audioPlayer.PlayDamageClip();
+            
 
         }
     }
@@ -50,4 +58,23 @@ public class Health : MonoBehaviour
         }
          Destroy(gameObject);
     }
+    void PlayHitEffect()
+    {
+        if (hitEffect != null) 
+        {ParticleSystem instance  =  Instantiate(hitEffect,transform.position,Quaternion.identity);
+            Destroy(instance.gameObject,instance.main.duration + instance.main.startLifetime.constantMax);
+        } 
+    
+    }
+    void ShakeCamera()
+    {
+        if (cameraShake != null && applyCameraShake)
+        {
+            cameraShake.Play();
+        }
+
+
+
+    }
+
 }
