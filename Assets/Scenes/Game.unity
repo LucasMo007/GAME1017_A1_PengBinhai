@@ -1489,6 +1489,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6616890949905662802, guid: 643d8407e815d8546a4f03736cee032e, type: 3}
+      propertyPath: damageVolume
+      value: 0.742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616890949905662802, guid: 643d8407e815d8546a4f03736cee032e, type: 3}
+      propertyPath: shootingVolume
+      value: 0.774
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
