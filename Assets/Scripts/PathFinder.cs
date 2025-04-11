@@ -6,7 +6,7 @@ public class PathFinder : MonoBehaviour
 {
 
     EnemySpawner enemySpawner;
-    WaveConfigSo waveConfig;
+    [SerializeField]WaveConfigSo waveConfig;
     List<Transform> waypoints;
     int waypointIndex = 0;
 
