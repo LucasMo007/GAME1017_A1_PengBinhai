@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -5720596940873512773}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   isPlayer: 1
   health: 50
   hitEffect: {fileID: 1591043435142128682, guid: 4219d24ba83c2644dbdeafe8af025be5, type: 3}
+  healthPickupPrefab: {fileID: 0}
   applyCameraShake: 1
   score: 0
 --- !u!1 &8094700847701082332

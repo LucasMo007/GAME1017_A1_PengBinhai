@@ -212,6 +212,7 @@ MonoBehaviour:
   isPlayer: 0
   health: 30
   hitEffect: {fileID: 1591043435142128682, guid: 4219d24ba83c2644dbdeafe8af025be5, type: 3}
+  healthPickupPrefab: {fileID: 7205508398364679862, guid: ce1366d252db81d4a8f1f47bdb1eeae6, type: 3}
   applyCameraShake: 0
   score: 50
 --- !u!114 &-2727085397646613254

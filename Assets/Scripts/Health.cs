@@ -11,6 +11,9 @@ public class Health : MonoBehaviour
     [SerializeField] int health = 50;
     [SerializeField] ParticleSystem hitEffect;
 
+    [SerializeField] GameObject healthPickupPrefab; // Assign via Inspector
+
+
     [SerializeField] bool applyCameraShake;
     CameraShake cameraShake;
     [SerializeField] int score = 50;
@@ -52,7 +55,7 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-    void Die()
+    /*void Die()
     {
         if (!isPlayer)
         {
@@ -64,6 +67,26 @@ public class Health : MonoBehaviour
             levelManager.LoadGameOver();
         }
          Destroy(gameObject);
+    }*/
+    void Die()
+    {
+        if (!isPlayer)
+        {
+            // 10–20% drop chance
+            float dropChance = Random.Range(0f, 1f);
+            if (dropChance < 0.15f) // e.g., 15% chance
+            {
+                Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+            }
+
+            scoreKeeper.ModifyScore(score);
+        }
+        else
+        {
+            levelManager.LoadGameOver();
+        }
+
+        Destroy(gameObject);
     }
     void PlayHitEffect()
     {
@@ -83,5 +106,10 @@ public class Health : MonoBehaviour
 
 
     }
-
+    public void Heal(int amount)
+    {
+        health += amount;
+        // Optionally clamp to a max health value
+        health = Mathf.Min(health, 100); // change 100 to your max value
+    }
 }
