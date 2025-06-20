@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem hitEffect;
 
     [SerializeField] GameObject healthPickupPrefab; // Assign via Inspector
+    [SerializeField] GameObject couscousAmmoPickupPrefab; // Assign via Inspector
 
 
     [SerializeField] bool applyCameraShake;
@@ -47,7 +48,7 @@ public class Health : MonoBehaviour
     }
          public int GetHealth()
         {  return health; }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0)
@@ -74,9 +75,16 @@ public class Health : MonoBehaviour
         {
             // 10–20% drop chance
             float dropChance = Random.Range(0f, 1f);
-            if (dropChance < 0.15f) // e.g., 15% chance
+            /* if (dropChance < 0.15f) // e.g., 15% chance
+             {
+                 Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+             }*/
+            if (dropChance < 0.15f)
             {
                 Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
+            }
+            else if (dropChance < 0.30f)
+            { Instantiate(couscousAmmoPickupPrefab, transform.position, Quaternion.identity);
             }
 
             scoreKeeper.ModifyScore(score);

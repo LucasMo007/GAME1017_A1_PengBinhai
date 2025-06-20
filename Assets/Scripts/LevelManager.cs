@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadGameOver()
     {
+        scoreKeeper.SaveHighScoreIfNeeded();
         StartCoroutine(WaitAndLoad("GameOver",sceneLoadDelay));
     }
     public void QuitGame()

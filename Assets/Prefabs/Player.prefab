@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6317095555953991942}
   - component: {fileID: 3909892269638143704}
   - component: {fileID: -5720596940873512773}
+  - component: {fileID: 8229612198438719633}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -85,6 +86,9 @@ MonoBehaviour:
   paddingRight: 0.5
   paddingTop: 2
   paddingBottom: 1
+  couscousMissilePrefab: {fileID: 5401220433771481897, guid: 1eaed76034976c349af224de348e824b, type: 3}
+  firePoint: {fileID: 8519330412271623697}
+  catRoarClip: {fileID: 8300000, guid: 8ca1d9e57b45d5d4ca661fc9575b19c3, type: 3}
 --- !u!50 &-810740386238591479
 Rigidbody2D:
   serializedVersion: 4
@@ -182,9 +186,23 @@ MonoBehaviour:
   isPlayer: 1
   health: 50
   hitEffect: {fileID: 1591043435142128682, guid: 4219d24ba83c2644dbdeafe8af025be5, type: 3}
-  healthPickupPrefab: {fileID: 0}
+  healthPickupPrefab: {fileID: 7205508398364679862, guid: ce1366d252db81d4a8f1f47bdb1eeae6, type: 3}
+  couscousAmmoPickupPrefab: {fileID: 0}
   applyCameraShake: 1
   score: 0
+--- !u!114 &8229612198438719633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130312941514378025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62741996d813af14fb0a978a63e34429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  couscousAmmo: 0
 --- !u!1 &8094700847701082332
 GameObject:
   m_ObjectHideFlags: 0

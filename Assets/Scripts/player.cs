@@ -13,6 +13,12 @@ public class player : MonoBehaviour
     [SerializeField] float paddingTop;
     [SerializeField] float paddingBottom;
 
+    [SerializeField] GameObject couscousMissilePrefab;
+    [SerializeField] Transform firePoint;
+    [SerializeField] AudioClip catRoarClip;
+
+    PlayerCouscous playerCouscous;
+
     Vector2 minBounds;
     Vector2 maxBounds;
 
@@ -21,6 +27,7 @@ public class player : MonoBehaviour
     void Awake()
     {
         shooter = GetComponent<Shooting>();
+        playerCouscous = GetComponent<PlayerCouscous>();
     }
     void Start()
     {
@@ -45,6 +52,19 @@ public class player : MonoBehaviour
         newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x+paddingLeft, maxBounds.x-paddingRight);
         newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y+paddingBottom, maxBounds.y-paddingTop);
         transform.position = newPos;
+    }
+    void OnCouscousFire(InputValue value)
+    {
+        if (value.isPressed && playerCouscous.CanFire())
+        {
+            Instantiate(couscousMissilePrefab, firePoint.position, Quaternion.identity);
+            playerCouscous.UseAmmo();
+
+            if (catRoarClip != null)
+            {
+                AudioSource.PlayClipAtPoint(catRoarClip, Camera.main.transform.position);
+            }
+        }
     }
 
     void OnMove(InputValue value)
