@@ -3,7 +3,7 @@ using UnityEngine;
 public class CouscousMissile : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    [SerializeField] float explosionRadius = 3f;
+    [SerializeField] float explosionRadius = 5f;
     [SerializeField] int damage = 999;
 
     Transform target;
