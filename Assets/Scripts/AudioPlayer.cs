@@ -17,6 +17,9 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip menuToggleClip;
     [SerializeField][Range(0f, 1f)] float uiVolume = 1f;
 
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] float sfxVolume = 1f;
+
 
     static AudioPlayer instance;
    
@@ -51,12 +54,20 @@ public class AudioPlayer : MonoBehaviour
     {
        PlayClip(damageClip,damageVolume);
     }
-    void PlayClip(AudioClip clip,float volume)
+    /*void PlayClip(AudioClip clip,float volume)
     {
         if (clip != null)
         {
             Vector3 cameraPos = Camera.main.transform.position;
             AudioSource.PlayClipAtPoint(clip, cameraPos,volume);
+        }
+    }*/
+    void PlayClip(AudioClip clip, float volume)
+    {
+        if (clip != null)
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(clip, cameraPos, volume * sfxVolume);
         }
     }
     public void PlayClipAtCamera(AudioClip clip, float volume = 1f)
@@ -71,5 +82,18 @@ public class AudioPlayer : MonoBehaviour
     {
         PlayClip(menuToggleClip, uiVolume);
     }
+    public void SetSFXVolume(float value)
+    {
+        sfxVolume = value;
+        Debug.Log("SFX Volume set to: " + value);
+    }
 
+    public void SetMusicVolume(float value)
+    {
+        if (musicSource != null)
+        {
+            musicSource.volume = value;
+            Debug.Log("Music Volume set to: " + value);
+        }
+    }
 }
