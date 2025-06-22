@@ -13,14 +13,20 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip damageClip;
     [SerializeField][Range(0f, 1f)] float damageVolume = 1f;
 
+    [Header("UI")]
+    [SerializeField] AudioClip menuToggleClip;
+    [SerializeField][Range(0f, 1f)] float uiVolume = 1f;
+
+
     static AudioPlayer instance;
    
      void Awake()
     {
 
-        ManageSingleton();
+        //ManageSingleton();
+        Debug.Log("AudioPlayer initialized via MainController");
     }
-    void ManageSingleton ()
+    /*void ManageSingleton ()
     {
      //int instanceCount = FindObjectsOfType(GetType()).Length;
        // if (instanceCount > 1)
@@ -35,7 +41,7 @@ public class AudioPlayer : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-    }
+    }*/
 
     public void PlayShootingClip()
     {
@@ -52,6 +58,18 @@ public class AudioPlayer : MonoBehaviour
             Vector3 cameraPos = Camera.main.transform.position;
             AudioSource.PlayClipAtPoint(clip, cameraPos,volume);
         }
+    }
+    public void PlayClipAtCamera(AudioClip clip, float volume = 1f)
+    {
+        if (clip != null)
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(clip, cameraPos, volume);
+        }
+    }
+    public void PlayMenuToggleClip()
+    {
+        PlayClip(menuToggleClip, uiVolume);
     }
 
 }

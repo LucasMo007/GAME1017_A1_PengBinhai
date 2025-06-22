@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     [SerializeField] bool applyCameraShake;
     CameraShake cameraShake;
     [SerializeField] int score = 50;
-    AudioPlayer audioPlayer;
+    //AudioPlayer audioPlayer;
 
     ScoreKeeper scoreKeeper;
     LevelManager levelManager;
@@ -26,7 +26,8 @@ public class Health : MonoBehaviour
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
-        audioPlayer = FindObjectOfType<AudioPlayer>();
+        //audioPlayer = FindObjectOfType<AudioPlayer>();
+       
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         levelManager = FindObjectOfType<LevelManager>();
     }
@@ -41,9 +42,9 @@ public class Health : MonoBehaviour
             PlayHitEffect();
             ShakeCamera();
             damageDealer.Hit();
-            audioPlayer.PlayDamageClip();
-            
+            //audioPlayer.PlayDamageClip();
 
+            MainController.Instance.SoundManager.PlayDamageClip();
         }
     }
          public int GetHealth()

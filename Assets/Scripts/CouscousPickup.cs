@@ -7,7 +7,7 @@ public class CouscousPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // 检查碰到的是不是玩家
+        
         if (other.CompareTag("Player"))
         {
             PlayerCouscous playerCouscous = other.GetComponent<PlayerCouscous>();
@@ -16,10 +16,11 @@ public class CouscousPickup : MonoBehaviour
                 playerCouscous.AddAmmo(ammoAmount);
             }
 
-            // 播放音效
+           
             if (pickupSFX != null)
             {
-                AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);
+                //AudioSource.PlayClipAtPoint(pickupSFX, Camera.main.transform.position);
+                MainController.Instance.SoundManager.PlayClipAtCamera(pickupSFX);
             }
 
             Destroy(gameObject);
